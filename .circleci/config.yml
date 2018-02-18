@@ -13,4 +13,4 @@ jobs:
           command: date
       - run:
           name: Compile the program
-          command: gcc -o hello main.c
+          command: gcc -o hello src/main.c
