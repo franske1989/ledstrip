@@ -11,3 +11,6 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
+      - run:
+          name: Compile the program
+          command: gcc -o hello main.c
