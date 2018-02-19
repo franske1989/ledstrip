@@ -16,3 +16,15 @@ jobs:
       - run:
           name: Compile the program
           command: gcc -o /artifacts/hello src/main.c
+
+workflows:
+  version: 2
+  setup-build:
+    jobs:
+      - setup
+      - build:
+          requires:
+            - setup
+          # filters:
+          #   branches:
+          #     only: master
