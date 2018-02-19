@@ -1,5 +1,10 @@
 version: 2
 jobs:
+  setup:
+    steps:
+      - run:
+        name: Create needed dirs
+        command: mkdir /artifacts
   build:
     docker:
       - image: gcc
