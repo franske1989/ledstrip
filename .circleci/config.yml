@@ -21,6 +21,4 @@ workflows:
   setup_and_build:
     jobs:
       - setup
-      - build:
-          requires:
-            - setup
+      - build
