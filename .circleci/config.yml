@@ -1,6 +1,8 @@
 version: 2
 jobs:
   setup:
+    docker:
+      - image: gcc
     steps:
       - run:
         name: Create needed dirs
