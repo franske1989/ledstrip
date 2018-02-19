@@ -3,9 +3,9 @@ jobs:
   build:
     docker:
       - image: gcc
-    working_directory: src
+    working_directory: /tmp/ledstrip
     steps:
       - checkout
       - run:
           name: Compile the program
-          command: gcc -o hello main.c
+          command: gcc -o /artifacts/hello src/main.c
