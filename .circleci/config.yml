@@ -4,9 +4,10 @@ jobs:
     docker:
       - image: gcc
     steps:
+      - checkout
       - run:
-        name: Create needed dirs
-        command: mkdir /artifacts
+          name: Create needed dirs
+          command: mkdir /artifacts
   build:
     docker:
       - image: gcc
@@ -18,7 +19,9 @@ jobs:
           command: gcc -o /artifacts/hello src/main.c
 workflows:
   version: 2
-  setup_and_build:
+  build-deploy:
     jobs:
       - setup
-      - build
+      - build:
+          requires:
+            - setup
