@@ -18,12 +18,9 @@ jobs:
           command: gcc -o /artifacts/hello src/main.c
 workflows:
   version: 2
-  setup-build:
+  setup_and_build:
     jobs:
       - setup
       - build:
           requires:
             - setup
-          # filters:
-          #   branches:
-          #     only: master
