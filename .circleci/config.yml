@@ -8,4 +8,4 @@ jobs:
       - checkout
       - run:
           name: Compile the program
-          command: gcc -o hello src/main.c
+          command: gcc -o hello main.c
