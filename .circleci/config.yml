@@ -10,5 +10,8 @@ jobs:
           name: Setup artifact folder
           command: mkdir /artifacts
       - run:
+          name: cd to src dir
+          command: cd /home/pi/ledstrip/src
+      - run:
           name: Compile the program
-          command: gcc -o /artifacts/hello src/main.c
+          command: make
