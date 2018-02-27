@@ -11,7 +11,10 @@ jobs:
           command: mkdir /artifacts
       - run:
           name: cd to src dir
-          command: cd /home/pi/ledstrip/src
+          command: cd /tmp/ledstrip/src
       - run:
-          name: Compile the program
-          command: make
+          name: Compile the program with gcc
+          command: make strip
+      - run:
+          name: Compile the program with arm
+          command: make pi
