@@ -3,14 +3,15 @@ jobs:
   build:
     docker:
       - image: gcc
+    working_directory: /tmp/ledstrip
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: Setup artifact folder
+          command: mkdir /artifacts
       - run:
-          name: Print the Current Time
-          command: date
+          name: cd to src dir
+          command: cd /home/pi/ledstrip/src
       - run:
           name: Compile the program
-          command: gcc -o hello src/main.c
+          command: make
